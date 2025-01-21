@@ -2,19 +2,27 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "carolinas-tweaks:gold_painted_door",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "carolinas-tweaks:gold_painted_door"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "carolinas-tweaks:gold_painted_door"
-        }
-      ],
-      "rolls": 1.0
+      ]
     }
   ]
 }
