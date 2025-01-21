@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "carolinas-tweaks",
+	"version": "${version}",
+	"name": "Carolina's Tweaks",
+	"description": "A collection of minor adjustments and tweaks by Carolina to improve your game.",
+	"authors": [
+		"Carolina Mitchell"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "AGPL-3.0",
+	"icon": "assets/carolinas-tweaks/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"icu.carolinainthe.carolinastweaks.CarolinasTweaks"
+		],
+		"client": [
+			"icu.carolinainthe.carolinastweaks.CarolinasTweaksClient"
+		],
+		"fabric-datagen": [
+			"icu.carolinainthe.carolinastweaks.CarolinasTweaksDataGenerator"
+		]
+	},
+	"mixins": [
+		"carolinas-tweaks.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
