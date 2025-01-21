@@ -16,7 +16,7 @@ public class ModItems {
 
 
     // Registers mod items.
-//    public static final Item SACK_OF_COCOA = registerItem("sack_of_cocoa", new Item(new FabricItemSettings()));
+//    public static final Item EXAMPLE = registerItem("example", new Item(new FabricItemSettings()));
 
     // Register individual item function.
     private static Item registerItem(String name, Item item) {
