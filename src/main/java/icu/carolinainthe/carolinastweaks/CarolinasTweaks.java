@@ -1,7 +1,6 @@
 package icu.carolinainthe.carolinastweaks;
 
 import icu.carolinainthe.carolinastweaks.blocks.ModBlocks;
-import icu.carolinainthe.carolinastweaks.items.ModItems;
 import icu.carolinainthe.carolinastweaks.items.ModItemsGroups;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,7 +22,6 @@ public class CarolinasTweaks implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Loading " + MOD_ID + ", created by Carolina Mitchell (carolina_slays)");
-		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemsGroups.registerItemGroups();
 	}

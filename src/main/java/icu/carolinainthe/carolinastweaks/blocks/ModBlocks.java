@@ -3,9 +3,7 @@ package icu.carolinainthe.carolinastweaks.blocks;
 import icu.carolinainthe.carolinastweaks.CarolinasTweaks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -21,9 +19,13 @@ public class ModBlocks {
                     .strength(0.5f, 0.2f)
             ));
 
-    public static final Block CONDENSED_COCOA = registerBlock("condensed_cocoa", new Block((FabricBlockSettings.copyOf(Blocks.COCOA)
-            .strength(0.8f, 3.0f)
-    )));
+    public static final Block CONDENSED_COCOA = registerBlock("condensed_cocoa",
+            new Block(FabricBlockSettings.copyOf(Blocks.COCOA)
+                .strength(0.8f, 3.0f)
+            ));
+
+    public static final Block GOLD_PAINTED_DOOR = registerBlock("gold_painted_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
 
     // Register block function.
     private static Block registerBlock(String name, Block block) {

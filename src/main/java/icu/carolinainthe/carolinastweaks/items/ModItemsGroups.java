@@ -23,6 +23,7 @@ public class ModItemsGroups {
                     .icon(() -> new ItemStack(ModBlocks.CONDENSED_COCOA)).entries((displayContext, entries) -> {
                          entries.add(ModBlocks.BUNDLE_OF_STICKS);
                          entries.add(ModBlocks.CONDENSED_COCOA);
+                         entries.add(ModBlocks.GOLD_PAINTED_DOOR);
                     }).build());
 
     // Adds items to the ingredients item group in the creative mode menu.
@@ -35,13 +36,17 @@ public class ModItemsGroups {
         entries.add(ModBlocks.CONDENSED_COCOA);
     }
 
+    // Add items to the building blocks item group in the creative mode menu.
+    private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
+        entries.add(ModBlocks.GOLD_PAINTED_DOOR);
+    }
+
     // Registers all mod items into their respective groups, called by the main class.
     public static void registerItemGroups() {
         CarolinasTweaks.LOGGER.info("Registering mod item groups for " + MOD_ID + ", created by Carolina Mitchell (carolina_slays)");
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItemsGroups::addItemsToIngredientsItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModItemsGroups::addItemsToNaturalBlocksItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(ModItemsGroups::addItemsToBuildingBlocksItemGroup);
     }
-
-
 }

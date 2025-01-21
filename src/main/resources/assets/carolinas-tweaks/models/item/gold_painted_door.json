@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "carolinas-tweaks:item/gold_painted_door"
+  }
+}
