@@ -14,7 +14,7 @@ For more information, head over the [Carolina's Tweaks mod wiki](https://github.
 
 ## Installation
 
-Head over the Modrinth page or the releases page on this GitHub and download the latest version that corresponds with your Minecraft version. Then, drop the downloaded file into your mods folder, and if on a server, into your server's mods folder as well..
+Head over the Modrinth page or the releases page on this GitHub and download the latest version that corresponds with your Minecraft version. Then, drop the downloaded file into your mods folder, and if on a server, into your server's mods folder as well.
 
 ## Credits and Licence
 This mod was created by Carolina Mitchell.
