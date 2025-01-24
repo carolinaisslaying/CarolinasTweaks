@@ -34,7 +34,12 @@
 		"java": ">=17",
 		"fabric-api": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/VVTJhkKc4G"
+			},
+			"update_checker": true
+		}
 	}
 }
