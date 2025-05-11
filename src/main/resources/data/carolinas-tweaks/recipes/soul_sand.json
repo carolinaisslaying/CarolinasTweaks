@@ -1,5 +1,5 @@
 {
-  "type": "create:splashing",
+  "type": "create:haunting",
   "ingredients": [
     {
       "item": "minecraft:soul_sand"
@@ -8,7 +8,7 @@
   "results": [
     {
       "chance": 0.125,
-      "count": 4,
+      "count": 3,
       "item": "minecraft:quartz"
     },
     {
