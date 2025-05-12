@@ -41,7 +41,7 @@ public class ModItemsGroups {
     public static final ItemGroup MOD_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(MOD_ID,"items"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.items"))
-                    .icon(() -> new ItemStack(ModBlocks.CONDENSED_COCOA)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModItems.BOTTLE_OF_BERRY_JUICE)).entries((displayContext, entries) -> {
                          entries.add(ModBlocks.BUNDLE_OF_STICKS);
                          entries.add(ModBlocks.CONDENSED_COCOA);
                          entries.add(ModBlocks.GOLD_PAINTED_DOOR);
