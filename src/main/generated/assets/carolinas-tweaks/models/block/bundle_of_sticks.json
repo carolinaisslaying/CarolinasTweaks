@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "carolinas-tweaks:block/bundle_of_sticks_bottom",
+    "side": "carolinas-tweaks:block/bundle_of_sticks_side",
+    "top": "carolinas-tweaks:block/bundle_of_sticks_top"
+  }
+}
