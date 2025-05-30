@@ -25,6 +25,7 @@ import icu.carolinainthe.carolinastweaks.blocks.ModBlocks;
 import icu.carolinainthe.carolinastweaks.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -47,6 +48,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.COCOA_BEANS,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_COCOA);
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.GUNPOWDER,
+                RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_GUNPOWDER);
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.QUARTZ,
+                RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BLOCK);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.QUARTZ, 4)
+                .input(Blocks.QUARTZ_BLOCK)
+                .criterion(hasItem(Items.QUARTZ_BLOCK), conditionsFromItem(Items.QUARTZ_BLOCK))
+                .offerTo(exporter, new Identifier("carolinas-tweaks", "quartz_from_block"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BOTTLE_OF_BERRY_JUICE, 1)
                 .pattern("SSS")

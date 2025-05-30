@@ -40,5 +40,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BUNDLE_OF_STICKS)
                 .add(ModBlocks.CONDENSED_COCOA)
                 .add(ModBlocks.GOLD_PAINTED_DOOR);
+
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.BLOCK_OF_GUNPOWDER);
+
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
     }
 }

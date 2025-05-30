@@ -46,5 +46,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         ));
         addDrop(ModBlocks.CONDENSED_COCOA);
         addDrop(ModBlocks.GOLD_PAINTED_DOOR, doorDrops(ModBlocks.GOLD_PAINTED_DOOR));
+        addDrop(ModBlocks.BLOCK_OF_GUNPOWDER);
+        addDrop(ModBlocks.CONDENSED_QUARTZ_BLOCK);
     }
 }

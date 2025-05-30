@@ -44,13 +44,16 @@ public class ModItemsGroups {
                     .icon(() -> new ItemStack(ModItems.BOTTLE_OF_BERRY_JUICE)).entries((displayContext, entries) -> {
                          entries.add(ModBlocks.BUNDLE_OF_STICKS);
                          entries.add(ModBlocks.CONDENSED_COCOA);
+                         entries.add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
                          entries.add(ModBlocks.GOLD_PAINTED_DOOR);
+                         entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
                          entries.add(ModItems.BOTTLE_OF_BERRY_JUICE);
                     }).build());
 
     // Adds items to the ingredients item group in the creative mode menu.
     private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.BUNDLE_OF_STICKS);
+        entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
     }
 
     // Adds items to the natural blocks item group in the creative mode menu.
@@ -61,6 +64,7 @@ public class ModItemsGroups {
     // Add items to the building blocks item group in the creative mode menu.
     private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.GOLD_PAINTED_DOOR);
+        entries.add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
     }
 
     // Add items to the food and drink item group in the creative mode menu.

@@ -40,6 +40,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSingleton(ModBlocks.BUNDLE_OF_STICKS, TexturedModel.CUBE_BOTTOM_TOP);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_COCOA);
         blockStateModelGenerator.registerDoor(ModBlocks.GOLD_PAINTED_DOOR);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK_OF_GUNPOWDER);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_QUARTZ_BLOCK);
     }
 
     @Override

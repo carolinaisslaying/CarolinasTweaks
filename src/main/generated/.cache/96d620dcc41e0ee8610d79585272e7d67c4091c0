@@ -1,2 +1,4 @@
-// 1.20.1	2025-05-30T19:57:00.3951688	Carolina's Tweaks/Tags for minecraft:block
+// 1.20.1	2025-05-30T21:33:53.9573872	Carolina's Tweaks/Tags for minecraft:block
 fe6b2792f48327dd270e0e2173cc80b901fee03c data\minecraft\tags\blocks\mineable\axe.json
+b1d36d55943b738e0147e1f85899e4be594022ee data\minecraft\tags\blocks\mineable\shovel.json
+6a80f1ba3867195af629d7f9d0bc1ba14def8ddf data\minecraft\tags\blocks\mineable\pickaxe.json

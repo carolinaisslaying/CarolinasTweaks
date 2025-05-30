@@ -24,6 +24,7 @@ package icu.carolinainthe.carolinastweaks.blocks;
 import icu.carolinainthe.carolinastweaks.CarolinasTweaks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -45,12 +46,21 @@ public class ModBlocks {
                 .strength(0.8f, 3.0f)
             ));
 
+    public static final Block CONDENSED_QUARTZ_BLOCK = registerBlock("condensed_quartz_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_BLOCK)
+                    .strength(1.2f)
+            ));
+
     public static final Block GOLD_PAINTED_DOOR = registerBlock("gold_painted_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
+
+    public static final Block BLOCK_OF_GUNPOWDER = registerBlock("block_of_gunpowder",
+            new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
 
     // Register block function.
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+
         return Registry.register(Registries.BLOCK, Identifier.of(MOD_ID, name), block);
     }
 
@@ -60,8 +70,17 @@ public class ModBlocks {
                 new BlockItem(block, new FabricItemSettings()));
     }
 
+    // Function to register multiple flammable blocks.
+    private static void registerFlammableBlocks(Block... blocks) {
+        FlammableBlockRegistry registry = FlammableBlockRegistry.getDefaultInstance();
+        for (Block block : blocks) {
+            registry.add(block, 5, 5);
+        }
+    }
+
     // Main function to register all items, called in the main class.
     public static void registerModBlocks() {
         CarolinasTweaks.LOGGER.info("Registering mod blocks for " + MOD_ID + ", created by Carolina Mitchell (carolina_slays)");
+        registerFlammableBlocks(BUNDLE_OF_STICKS, BLOCK_OF_GUNPOWDER);
     }
 }
