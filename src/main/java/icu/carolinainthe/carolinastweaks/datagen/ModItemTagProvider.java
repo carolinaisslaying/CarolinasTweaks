@@ -1,7 +1,7 @@
 /*
     Carolina's Tweaks - A Minecraft Fabric Mod with a collection of minor adjustments and tweaks to improve your game.
     Copyright (C) 2025 Carolina Mitchell
-    
+
     This licence notice only applies to non-asset components relating to this software. For the assets licence,
     see the ASSETS_LICENCE.md file.
 
@@ -19,21 +19,22 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-package icu.carolinainthe.carolinastweaks;
+package icu.carolinainthe.carolinastweaks.datagen;
 
-import icu.carolinainthe.carolinastweaks.datagen.*;
-import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.registry.RegistryWrapper;
+import org.jetbrains.annotations.Nullable;
 
-public class CarolinasTweaksDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+import java.util.concurrent.CompletableFuture;
 
-		pack.addProvider(ModBlockTagProvider::new);
-//		pack.addProvider(ModItemTagProvider::new);
-		pack.addProvider(ModLootTableProvider::new);
-		pack.addProvider(ModModelProvider::new);
-		pack.addProvider(ModRecipeProvider::new);
-	}
+public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
+    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture, @Nullable BlockTagProvider blockTagProvider) {
+        super(output, completableFuture, blockTagProvider);
+    }
+
+    @Override
+    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+
+    }
 }

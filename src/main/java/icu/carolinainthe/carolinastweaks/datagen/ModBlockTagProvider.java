@@ -1,7 +1,7 @@
 /*
     Carolina's Tweaks - A Minecraft Fabric Mod with a collection of minor adjustments and tweaks to improve your game.
     Copyright (C) 2025 Carolina Mitchell
-    
+
     This licence notice only applies to non-asset components relating to this software. For the assets licence,
     see the ASSETS_LICENCE.md file.
 
@@ -19,21 +19,26 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-package icu.carolinainthe.carolinastweaks;
+package icu.carolinainthe.carolinastweaks.datagen;
 
-import icu.carolinainthe.carolinastweaks.datagen.*;
-import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import icu.carolinainthe.carolinastweaks.blocks.ModBlocks;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
 
-public class CarolinasTweaksDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+import java.util.concurrent.CompletableFuture;
 
-		pack.addProvider(ModBlockTagProvider::new);
-//		pack.addProvider(ModItemTagProvider::new);
-		pack.addProvider(ModLootTableProvider::new);
-		pack.addProvider(ModModelProvider::new);
-		pack.addProvider(ModRecipeProvider::new);
-	}
+public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+    public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
+    }
+
+    @Override
+    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.BUNDLE_OF_STICKS)
+                .add(ModBlocks.CONDENSED_COCOA)
+                .add(ModBlocks.GOLD_PAINTED_DOOR);
+    }
 }
