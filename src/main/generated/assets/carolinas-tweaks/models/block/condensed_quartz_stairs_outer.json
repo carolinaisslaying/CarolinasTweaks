@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "carolinas-tweaks:block/condensed_quartz_block",
+    "side": "carolinas-tweaks:block/condensed_quartz_block",
+    "top": "carolinas-tweaks:block/condensed_quartz_block"
+  }
+}

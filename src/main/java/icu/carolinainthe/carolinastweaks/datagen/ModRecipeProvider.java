@@ -25,15 +25,20 @@ import icu.carolinainthe.carolinastweaks.blocks.ModBlocks;
 import icu.carolinainthe.carolinastweaks.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -52,13 +57,49 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.GUNPOWDER,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_GUNPOWDER);
 
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.QUARTZ,
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, Items.QUARTZ,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BLOCK);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.QUARTZ, 4)
                 .input(Blocks.QUARTZ_BLOCK)
                 .criterion(hasItem(Items.QUARTZ_BLOCK), conditionsFromItem(Items.QUARTZ_BLOCK))
                 .offerTo(exporter, new Identifier("carolinas-tweaks", "quartz_from_block"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_PILLAR, 2)
+                .pattern("C")
+                .pattern("C")
+                .input('C', ModBlocks.CONDENSED_QUARTZ_BLOCK)
+                .criterion(hasItem(ModBlocks.CONDENSED_QUARTZ_BLOCK), conditionsFromItem((ModBlocks.CONDENSED_QUARTZ_BLOCK)))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BRICKS, 4)
+                .pattern("CC")
+                .pattern("CC")
+                .input('C', ModBlocks.CONDENSED_QUARTZ_BLOCK)
+                .criterion(hasItem(ModBlocks.CONDENSED_QUARTZ_BLOCK), conditionsFromItem((ModBlocks.CONDENSED_QUARTZ_BLOCK)))
+                .offerTo(exporter);
+
+        createStairsRecipe(ModBlocks.CONDENSED_QUARTZ_STAIRS, Ingredient.ofItems(ModBlocks.CONDENSED_QUARTZ_BLOCK))
+                .criterion(hasItem(ModBlocks.CONDENSED_QUARTZ_BLOCK), conditionsFromItem((ModBlocks.CONDENSED_QUARTZ_BLOCK)))
+                .offerTo(exporter);
+
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_SLAB,
+                ModBlocks.CONDENSED_QUARTZ_BLOCK);
+
+        Map<Block, Integer> stonecuttingRecipes = Map.of(
+                ModBlocks.CONDENSED_QUARTZ_PILLAR, 1,
+                ModBlocks.CONDENSED_QUARTZ_BRICKS, 1,
+                ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK, 1,
+                ModBlocks.CONDENSED_QUARTZ_STAIRS, 1,
+                ModBlocks.CONDENSED_QUARTZ_SLAB, 2
+        );
+
+        for (Map.Entry<Block, Integer> entry : stonecuttingRecipes.entrySet()) {
+            Block output = entry.getKey();
+            int count = entry.getValue();
+
+            offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, output, ModBlocks.CONDENSED_QUARTZ_BLOCK, count);
+        }
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BOTTLE_OF_BERRY_JUICE, 1)
                 .pattern("SSS")

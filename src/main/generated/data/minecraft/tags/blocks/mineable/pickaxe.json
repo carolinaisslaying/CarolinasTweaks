@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "carolinas-tweaks:condensed_quartz_block"
+    "carolinas-tweaks:condensed_quartz_block",
+    "carolinas-tweaks:condensed_quartz_bricks",
+    "carolinas-tweaks:condensed_quartz_pillar",
+    "carolinas-tweaks:chiseled_condensed_quartz_block",
+    "carolinas-tweaks:condensed_quartz_stairs",
+    "carolinas-tweaks:condensed_quartz_slab"
   ]
 }

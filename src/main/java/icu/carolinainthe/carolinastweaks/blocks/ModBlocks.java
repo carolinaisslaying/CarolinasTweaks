@@ -46,16 +46,42 @@ public class ModBlocks {
                 .strength(0.8f, 3.0f)
             ));
 
-    public static final Block CONDENSED_QUARTZ_BLOCK = registerBlock("condensed_quartz_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_BLOCK)
-                    .strength(1.2f)
-            ));
-
     public static final Block GOLD_PAINTED_DOOR = registerBlock("gold_painted_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
 
     public static final Block BLOCK_OF_GUNPOWDER = registerBlock("block_of_gunpowder",
             new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
+
+    public static final Block CONDENSED_QUARTZ_BLOCK = registerBlock("condensed_quartz_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_BLOCK)
+                    .strength(1.2f)
+            ));
+
+    public static final Block CONDENSED_QUARTZ_PILLAR = registerBlock("condensed_quartz_pillar",
+            new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR)
+                    .strength(1.2f)
+            ));
+
+    public static final Block CONDENSED_QUARTZ_BRICKS = registerBlock("condensed_quartz_bricks",
+            new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)
+                    .strength(1.2f)
+            ));
+
+    public static final Block CHISELED_CONDENSED_QUARTZ_BLOCK = registerBlock("chiseled_condensed_quartz_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_QUARTZ_BLOCK)
+                    .strength(1.2f)
+            ));
+
+    public static final Block CONDENSED_QUARTZ_STAIRS = registerBlock("condensed_quartz_stairs",
+            new StairsBlock(ModBlocks.CONDENSED_QUARTZ_BLOCK.getDefaultState(),
+                    FabricBlockSettings.copyOf(Blocks.QUARTZ_STAIRS)
+                        .strength(1.2f)
+            ));
+
+    public static final Block CONDENSED_QUARTZ_SLAB = registerBlock("condensed_quartz_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_SLAB)
+                    .strength(1.2f)
+            ));
 
     // Register block function.
     private static Block registerBlock(String name, Block block) {

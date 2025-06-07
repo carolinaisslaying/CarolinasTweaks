@@ -1,9 +1,14 @@
 {
     "block.carolinas-tweaks.bundle_of_sticks": "Bundle of Sticks",
     "block.carolinas-tweaks.condensed_cocoa": "Condensed Cocoa",
-    "block.carolinas-tweaks.condensed_quartz_block": "Condensed Quartz Block",
     "block.carolinas-tweaks.gold_painted_door": "Gold Painted Door",
     "block.carolinas-tweaks.block_of_gunpowder": "Block of Gunpowder",
+    "block.carolinas-tweaks.condensed_quartz_block": "Condensed Quartz Block",
+    "block.carolinas-tweaks.condensed_quartz_bricks": "Condensed Quartz Bricks",
+    "block.carolinas-tweaks.condensed_quartz_pillar": "Condensed Quartz Pillar",
+    "block.carolinas-tweaks.chiseled_condensed_quartz_block": "Chiseled Condensed Quartz Block",
+    "block.carolinas-tweaks.condensed_quartz_stairs": "Condensed Quartz Stairs",
+    "block.carolinas-tweaks.condensed_quartz_slab": "Condensed Quartz Slab",
     "item.carolinas-tweaks.bottle_of_berry_juice": "Bottle of Berry Juice",
     "itemGroup.items": "Carolina's Tweaks"
 }

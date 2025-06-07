@@ -45,6 +45,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLOCK_OF_GUNPOWDER);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
+                .add(ModBlocks.CONDENSED_QUARTZ_BLOCK)
+                .add(ModBlocks.CONDENSED_QUARTZ_BRICKS)
+                .add(ModBlocks.CONDENSED_QUARTZ_PILLAR)
+                .add(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK)
+                .add(ModBlocks.CONDENSED_QUARTZ_STAIRS)
+                .add(ModBlocks.CONDENSED_QUARTZ_SLAB);
     }
 }

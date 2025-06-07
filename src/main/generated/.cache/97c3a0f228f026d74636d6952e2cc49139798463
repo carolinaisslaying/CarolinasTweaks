@@ -1,6 +1,11 @@
-// 1.20.1	2025-05-30T21:33:53.9573872	Carolina's Tweaks/Block Loot Tables
+// 1.20.1	2025-06-07T19:44:43.7415178	Carolina's Tweaks/Block Loot Tables
 10c49a225676c6723fca4ea5f76876622e153f27 data\carolinas-tweaks\loot_tables\blocks\condensed_cocoa.json
-28537fcbbd14626a703254d59a1e4ed7d0ee180e data\carolinas-tweaks\loot_tables\blocks\bundle_of_sticks.json
 2c711ad107dbd3bf89335107f3c05375b0d214f6 data\carolinas-tweaks\loot_tables\blocks\condensed_quartz_block.json
+28537fcbbd14626a703254d59a1e4ed7d0ee180e data\carolinas-tweaks\loot_tables\blocks\bundle_of_sticks.json
+f6f96b5566156124021a3781964a06356a486c50 data\carolinas-tweaks\loot_tables\blocks\condensed_quartz_bricks.json
 c0c733566cefd561e28e0570e9cef2a0e79a9030 data\carolinas-tweaks\loot_tables\blocks\block_of_gunpowder.json
+6d86ea7e2bffd616ec38f3f6740e6958aa31a423 data\carolinas-tweaks\loot_tables\blocks\condensed_quartz_slab.json
+3c724e6a78d1dff085905c51d40c513a59eb8da4 data\carolinas-tweaks\loot_tables\blocks\condensed_quartz_stairs.json
 c12e08e6b7dcad29636da27ccf005c4e5cfafd95 data\carolinas-tweaks\loot_tables\blocks\gold_painted_door.json
+a40a2bd7c9b1683ecb87d4f04f93ee7028b3b92a data\carolinas-tweaks\loot_tables\blocks\condensed_quartz_pillar.json
+40e5cd6e554afad9133038ed3359320f393048ec data\carolinas-tweaks\loot_tables\blocks\chiseled_condensed_quartz_block.json

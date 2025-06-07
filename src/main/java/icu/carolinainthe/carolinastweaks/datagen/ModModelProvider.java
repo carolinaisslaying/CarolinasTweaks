@@ -41,7 +41,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_COCOA);
         blockStateModelGenerator.registerDoor(ModBlocks.GOLD_PAINTED_DOOR);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK_OF_GUNPOWDER);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_QUARTZ_BLOCK);
+
+        BlockStateModelGenerator.BlockTexturePool condensedQuartzPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CONDENSED_QUARTZ_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_QUARTZ_BRICKS);
+        blockStateModelGenerator.registerSingleton(ModBlocks.CONDENSED_QUARTZ_PILLAR,
+                TexturedModel.END_FOR_TOP_CUBE_COLUMN);
+        blockStateModelGenerator.registerSingleton(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK,
+                TexturedModel.END_FOR_TOP_CUBE_COLUMN);
+
+        condensedQuartzPool.stairs(ModBlocks.CONDENSED_QUARTZ_STAIRS);
+        condensedQuartzPool.slab(ModBlocks.CONDENSED_QUARTZ_SLAB);
     }
 
     @Override

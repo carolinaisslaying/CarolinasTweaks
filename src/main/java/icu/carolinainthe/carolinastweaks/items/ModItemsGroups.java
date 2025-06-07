@@ -42,12 +42,17 @@ public class ModItemsGroups {
             Identifier.of(MOD_ID,"items"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.items"))
                     .icon(() -> new ItemStack(ModItems.BOTTLE_OF_BERRY_JUICE)).entries((displayContext, entries) -> {
-                         entries.add(ModBlocks.BUNDLE_OF_STICKS);
-                         entries.add(ModBlocks.CONDENSED_COCOA);
-                         entries.add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
-                         entries.add(ModBlocks.GOLD_PAINTED_DOOR);
-                         entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
-                         entries.add(ModItems.BOTTLE_OF_BERRY_JUICE);
+                        entries.add(ModBlocks.BUNDLE_OF_STICKS);
+                        entries.add(ModBlocks.CONDENSED_COCOA);
+                        entries.add(ModBlocks.GOLD_PAINTED_DOOR);
+                        entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
+                        entries.add(ModItems.BOTTLE_OF_BERRY_JUICE);
+                        entries.add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
+                        entries.add(ModBlocks.CONDENSED_QUARTZ_BRICKS);
+                        entries.add(ModBlocks.CONDENSED_QUARTZ_PILLAR);
+                        entries.add(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK);
+                        entries.add(ModBlocks.CONDENSED_QUARTZ_STAIRS);
+                        entries.add(ModBlocks.CONDENSED_QUARTZ_SLAB);
                     }).build());
 
     // Adds items to the ingredients item group in the creative mode menu.
@@ -65,6 +70,11 @@ public class ModItemsGroups {
     private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.GOLD_PAINTED_DOOR);
         entries.add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
+        entries.add(ModBlocks.CONDENSED_QUARTZ_BRICKS);
+        entries.add(ModBlocks.CONDENSED_QUARTZ_PILLAR);
+        entries.add(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK);
+        entries.add(ModBlocks.CONDENSED_QUARTZ_STAIRS);
+        entries.add(ModBlocks.CONDENSED_QUARTZ_SLAB);
     }
 
     // Add items to the food and drink item group in the creative mode menu.
