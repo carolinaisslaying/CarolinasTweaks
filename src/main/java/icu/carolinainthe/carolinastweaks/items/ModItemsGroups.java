@@ -53,12 +53,14 @@ public class ModItemsGroups {
                         entries.add(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK);
                         entries.add(ModBlocks.CONDENSED_QUARTZ_STAIRS);
                         entries.add(ModBlocks.CONDENSED_QUARTZ_SLAB);
+                        entries.add(ModBlocks.BLOCK_OF_LEATHER);
                     }).build());
 
     // Adds items to the ingredients item group in the creative mode menu.
     private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.BUNDLE_OF_STICKS);
         entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
+        entries.add(ModBlocks.BLOCK_OF_LEATHER);
     }
 
     // Adds items to the natural blocks item group in the creative mode menu.

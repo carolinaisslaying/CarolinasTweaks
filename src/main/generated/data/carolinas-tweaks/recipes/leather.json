@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "carolinas-tweaks:condensed_quartz_block"
+      "item": "carolinas-tweaks:block_of_leather"
     }
   ],
   "result": {
     "count": 9,
-    "item": "minecraft:quartz"
+    "item": "minecraft:leather"
   }
 }

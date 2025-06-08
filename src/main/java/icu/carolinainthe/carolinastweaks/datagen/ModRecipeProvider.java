@@ -32,12 +32,10 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -57,8 +55,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.GUNPOWDER,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_GUNPOWDER);
 
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, Items.QUARTZ,
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.QUARTZ,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BLOCK);
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.LEATHER,
+                RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_LEATHER);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.QUARTZ, 4)
                 .input(Blocks.QUARTZ_BLOCK)
@@ -78,6 +79,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('C', ModBlocks.CONDENSED_QUARTZ_BLOCK)
                 .criterion(hasItem(ModBlocks.CONDENSED_QUARTZ_BLOCK), conditionsFromItem((ModBlocks.CONDENSED_QUARTZ_BLOCK)))
                 .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, Blocks.BELL, 1)
+            .pattern("SWS")
+            .pattern("SGS")
+            .pattern("SNS")
+            .input('S', Blocks.STONE)
+            .input('W', ItemTags.WOODEN_SLABS)
+            .input('N', Blocks.NOTE_BLOCK)
+            .input('G', Blocks.GOLD_BLOCK)
+            .criterion(hasItem(Blocks.GOLD_BLOCK), conditionsFromItem(Blocks.GOLD_BLOCK))
+            .criterion(hasItem(Blocks.NOTE_BLOCK), conditionsFromItem(Blocks.NOTE_BLOCK))
+            .offerTo(exporter);
 
         createStairsRecipe(ModBlocks.CONDENSED_QUARTZ_STAIRS, Ingredient.ofItems(ModBlocks.CONDENSED_QUARTZ_BLOCK))
                 .criterion(hasItem(ModBlocks.CONDENSED_QUARTZ_BLOCK), conditionsFromItem((ModBlocks.CONDENSED_QUARTZ_BLOCK)))

@@ -83,6 +83,11 @@ public class ModBlocks {
                     .strength(1.2f)
             ));
 
+    public static final Block BLOCK_OF_LEATHER = registerBlock("block_of_leather",
+            new Block(FabricBlockSettings.copyOf(Blocks.PURPLE_WOOL)
+                    .strength(1.5f, 1.0f)
+            ));
+
     // Register block function.
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

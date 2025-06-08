@@ -24,7 +24,9 @@ package icu.carolinainthe.carolinastweaks.items;
 import icu.carolinainthe.carolinastweaks.CarolinasTweaks;
 import icu.carolinainthe.carolinastweaks.items.custom.BerryJuiceItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -42,8 +44,14 @@ public class ModItems {
         return Registry.register(Registries.ITEM, Identifier.of(MOD_ID, name), item);
     }
 
+    // Function to add compostable items to the compostable items registry.
+    public static void registerCompostableItems() {
+        CompostingChanceRegistry.INSTANCE.add(Items.POISONOUS_POTATO, 0.45f);
+    }
+
     // Main function to register all items, called in the main class.
     public static void registerModItems() {
         CarolinasTweaks.LOGGER.info("Registering mod items for " + MOD_ID + ", created by Carolina Mitchell (carolina_slays)");
+        registerCompostableItems();
     }
 }
