@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "carolinas-tweaks:block/bundle_of_sticks_top",
-    "side": "carolinas-tweaks:block/bundle_of_sticks"
-  }
-}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "carolinas_tweaks:block/gold_painted_door_bottom",
+    "top": "carolinas_tweaks:block/gold_painted_door_top"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "carolinas-tweaks:block/condensed_quartz_pillar_top",
-    "side": "carolinas-tweaks:block/condensed_quartz_pillar"
-  }
-}

@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CarolinasTweaks implements ModInitializer {
-	public static final String MOD_ID = "carolinas-tweaks";
+	public static final String MOD_ID = "carolinas_tweaks";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -47,5 +47,6 @@ public class CarolinasTweaks implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModItemsGroups.registerItemGroups();
+		MigrationHelper.init();
 	}
 }

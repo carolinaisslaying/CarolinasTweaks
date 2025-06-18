@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "carolinas-tweaks:item/melon_seed_packet"
-  }
-}

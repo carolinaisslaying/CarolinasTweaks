@@ -76,7 +76,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.QUARTZ, 4)
                 .input(Blocks.QUARTZ_BLOCK)
                 .criterion(hasItem(Items.QUARTZ_BLOCK), conditionsFromItem(Items.QUARTZ_BLOCK))
-                .offerTo(exporter, new Identifier("carolinas-tweaks", "quartz_from_block"));
+                .offerTo(exporter, new Identifier("carolinas_tweaks", "quartz_from_block"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_PILLAR, 2)
                 .pattern("C")

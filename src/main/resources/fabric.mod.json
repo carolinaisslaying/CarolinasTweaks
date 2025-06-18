@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "carolinas-tweaks",
+	"id": "carolinas_tweaks",
 	"version": "${version}",
 	"name": "Carolina's Tweaks",
 	"description": "A collection of minor adjustments and tweaks by Carolina to improve your game.",
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "AGPL-3.0",
-	"icon": "assets/carolinas-tweaks/icon.png",
+	"icon": "assets/carolinas_tweaks/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -26,7 +26,7 @@
 		]
 	},
 	"mixins": [
-		"carolinas-tweaks.mixins.json"
+		"carolinas_tweaks.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",

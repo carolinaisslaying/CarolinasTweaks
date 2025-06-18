@@ -32,9 +32,13 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static icu.carolinainthe.carolinastweaks.CarolinasTweaks.MOD_ID;
 
 public class ModItems {
+    public static final Map<Item, Item> ITEM_MIGRATION_MAP = new HashMap<>();
 
     // Registers mod items.
     public static final Item BOTTLE_OF_BERRY_JUICE = registerItem("bottle_of_berry_juice",
@@ -62,9 +66,25 @@ public class ModItems {
         CompostingChanceRegistry.INSTANCE.add(Items.POISONOUS_POTATO, 0.45f);
     }
 
+    // Migration to new MOD_ID helper method
+    private static void registerGhostItem(String oldPath, Item realItem) {
+        Item dummyItem = new Item(new Item.Settings());
+        Registry.register(Registries.ITEM, new Identifier("carolinas-tweaks", oldPath), dummyItem);
+
+        // 2. Save the link so MigrationHelper can fix the inventory
+        ITEM_MIGRATION_MAP.put(dummyItem, realItem);
+    }
+
     // Main function to register all items, called in the main class.
     public static void registerModItems() {
         CarolinasTweaks.LOGGER.info("Registering mod items for " + MOD_ID + ", created by Carolina Mitchell (carolina_slays)");
         registerCompostableItems();
+
+        // Register ghost items
+        registerGhostItem("bottle_of_berry_juice", BOTTLE_OF_BERRY_JUICE);
+        registerGhostItem("wheat_seed_packet", WHEAT_SEED_PACKET);
+        registerGhostItem("melon_seed_packet", MELON_SEED_PACKET);
+        registerGhostItem("pumpkin_seed_packet", PUMPKIN_SEED_PACKET);
+        registerGhostItem("beetroot_seed_packet", BEETROOT_SEED_PACKET);
     }
 }
