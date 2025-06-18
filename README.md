@@ -5,7 +5,7 @@
 [<img alt="See me on GitHub" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/github-singular_vector.svg">](https://github.com/carolinaisslaying)
 [<img alt="Chat on Discord" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-singular_vector.svg">](https://discord.gg/VVTJhkKc4G)
 
-A collection of minor adjustments and tweaks by Carolina to improve your game. This mod only works on Fabric. Non-Fabric support is not planned and will not be added.
+A collection of minor adjustments and tweaks by Carolina to improve your game. This mod has a NeoForge version, and the Fabric version is no longer the primary focus and I can make no guarantee that it will be maintained. This decision, despite my original intention to never provide a Forge version, is due to the state of Create Fabric which this mod was intended to work alongside.
 
 ## Features
 This adds a collection of minor features, such as berry juice, bundle of sticks and compressed cocoa blocks. It also adds a gold painted door and trapdoor, similar to the [Supplementaries](https://github.com/MehVahdJukaar/Supplementaries) mod, but controllable by redstone in the same way as a typical wood door.
