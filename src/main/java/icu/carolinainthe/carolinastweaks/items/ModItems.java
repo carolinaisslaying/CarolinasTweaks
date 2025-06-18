@@ -23,6 +23,7 @@ package icu.carolinainthe.carolinastweaks.items;
 
 import icu.carolinainthe.carolinastweaks.CarolinasTweaks;
 import icu.carolinainthe.carolinastweaks.items.custom.BerryJuiceItem;
+import icu.carolinainthe.carolinastweaks.items.custom.SeedPacketItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.item.Item;
@@ -38,6 +39,18 @@ public class ModItems {
     // Registers mod items.
     public static final Item BOTTLE_OF_BERRY_JUICE = registerItem("bottle_of_berry_juice",
             new BerryJuiceItem(new FabricItemSettings().maxCount(16).food(ModFoodComponents.BOTTLE_OF_BERRY_JUICE)));
+
+    public static final Item WHEAT_SEED_PACKET = registerItem("wheat_seed_packet",
+            new SeedPacketItem(Items.WHEAT_SEEDS, new FabricItemSettings().maxCount(16)));
+
+    public static final Item MELON_SEED_PACKET = registerItem("melon_seed_packet",
+            new SeedPacketItem(Items.MELON_SEEDS, new FabricItemSettings().maxCount(16)));
+
+    public static final Item PUMPKIN_SEED_PACKET = registerItem("pumpkin_seed_packet",
+            new SeedPacketItem(Items.PUMPKIN_SEEDS, new FabricItemSettings().maxCount(16)));
+
+    public static final Item BEETROOT_SEED_PACKET = registerItem("beetroot_seed_packet",
+            new SeedPacketItem(Items.BEETROOT_SEEDS, new FabricItemSettings().maxCount(16)));
 
     // Register individual item function.
     private static Item registerItem(String name, Item item) {

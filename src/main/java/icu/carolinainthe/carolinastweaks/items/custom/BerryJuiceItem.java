@@ -26,6 +26,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -46,6 +47,7 @@ public class BerryJuiceItem extends Item {
                     player.dropItem(emptyBottle, false);
                 }
             }
+            player.incrementStat(Stats.USED.getOrCreateStat(this));
         }
         return resultStack;
     }

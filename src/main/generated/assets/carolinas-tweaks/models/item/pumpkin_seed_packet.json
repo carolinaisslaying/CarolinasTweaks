@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "carolinas-tweaks:item/pumpkin_seed_packet"
+  }
+}

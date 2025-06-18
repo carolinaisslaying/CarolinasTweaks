@@ -61,6 +61,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.LEATHER,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_LEATHER);
 
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.WHEAT_SEEDS,
+                RecipeCategory.MISC, ModItems.WHEAT_SEED_PACKET);
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.MELON_SEEDS,
+                RecipeCategory.MISC, ModItems.MELON_SEED_PACKET);
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.PUMPKIN_SEEDS,
+                RecipeCategory.MISC, ModItems.PUMPKIN_SEED_PACKET);
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.BEETROOT_SEEDS,
+                RecipeCategory.MISC, ModItems.BEETROOT_SEED_PACKET);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.QUARTZ, 4)
                 .input(Blocks.QUARTZ_BLOCK)
                 .criterion(hasItem(Items.QUARTZ_BLOCK), conditionsFromItem(Items.QUARTZ_BLOCK))

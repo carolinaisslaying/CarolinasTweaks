@@ -57,5 +57,9 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.BOTTLE_OF_BERRY_JUICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WHEAT_SEED_PACKET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MELON_SEED_PACKET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PUMPKIN_SEED_PACKET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BEETROOT_SEED_PACKET, Models.GENERATED);
     }
 }

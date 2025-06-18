@@ -54,23 +54,27 @@ public class ModItemsGroups {
                         entries.add(ModBlocks.CONDENSED_QUARTZ_STAIRS);
                         entries.add(ModBlocks.CONDENSED_QUARTZ_SLAB);
                         entries.add(ModBlocks.BLOCK_OF_LEATHER);
+                        entries.add(ModItems.WHEAT_SEED_PACKET);
+                        entries.add(ModItems.MELON_SEED_PACKET);
+                        entries.add(ModItems.PUMPKIN_SEED_PACKET);
+                        entries.add(ModItems.BEETROOT_SEED_PACKET);
                     }).build());
 
     // Adds items to the ingredients item group in the creative mode menu.
     private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
-        entries.add(ModBlocks.BUNDLE_OF_STICKS);
-        entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
-        entries.add(ModBlocks.BLOCK_OF_LEATHER);
-    }
-
-    // Adds items to the natural blocks item group in the creative mode menu.
-    private static void addItemsToNaturalBlocksItemGroup(FabricItemGroupEntries entries) {
-        entries.add(ModBlocks.CONDENSED_COCOA);
+        entries.add(ModItems.WHEAT_SEED_PACKET);
+        entries.add(ModItems.MELON_SEED_PACKET);
+        entries.add(ModItems.PUMPKIN_SEED_PACKET);
+        entries.add(ModItems.BEETROOT_SEED_PACKET);
     }
 
     // Add items to the building blocks item group in the creative mode menu.
     private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.GOLD_PAINTED_DOOR);
+        entries.add(ModBlocks.BUNDLE_OF_STICKS);
+        entries.add(ModBlocks.BLOCK_OF_GUNPOWDER);
+        entries.add(ModBlocks.BLOCK_OF_LEATHER);
+        entries.add(ModBlocks.CONDENSED_COCOA);
         entries.add(ModBlocks.CONDENSED_QUARTZ_BLOCK);
         entries.add(ModBlocks.CONDENSED_QUARTZ_BRICKS);
         entries.add(ModBlocks.CONDENSED_QUARTZ_PILLAR);
@@ -91,9 +95,6 @@ public class ModItemsGroups {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
                 .register(ModItemsGroups::addItemsToIngredientsItemGroup);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
-                .register(ModItemsGroups::addItemsToNaturalBlocksItemGroup);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register(ModItemsGroups::addItemsToBuildingBlocksItemGroup);

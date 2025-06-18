@@ -11,5 +11,9 @@
   "block.carolinas-tweaks.condensed_quartz_slab": "Condensed Quartz Slab",
   "block.carolinas-tweaks.block_of_leather": "Block of Leather",
   "item.carolinas-tweaks.bottle_of_berry_juice": "Bottle of Berry Juice",
+  "item.carolinas-tweaks.wheat_seed_packet": "Wheat Seed Packet",
+  "item.carolinas-tweaks.melon_seed_packet": "Melon Seed Packet",
+  "item.carolinas-tweaks.pumpkin_seed_packet": "Pumpkin Seed Packet",
+  "item.carolinas-tweaks.beetroot_seed_packet": "Beetroot Seed Packet",
   "itemGroup.items": "Carolina's Tweaks"
 }

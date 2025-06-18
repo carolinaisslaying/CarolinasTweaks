@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "carolinas-tweaks:beetroot_seed_packet"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:beetroot_seeds"
+  }
+}
