@@ -58,7 +58,7 @@ public class ModBlocks {
             ));
 
     public static final Block CONDENSED_QUARTZ_PILLAR = registerBlock("condensed_quartz_pillar",
-            new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR)
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR)
                     .strength(1.2f)
             ));
 

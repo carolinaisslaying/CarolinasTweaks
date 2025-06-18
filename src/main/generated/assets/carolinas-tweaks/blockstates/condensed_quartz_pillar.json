@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "carolinas-tweaks:block/condensed_quartz_pillar",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "carolinas-tweaks:block/condensed_quartz_pillar"
+    },
+    "axis=z": {
+      "model": "carolinas-tweaks:block/condensed_quartz_pillar",
+      "x": 90
     }
   }
 }

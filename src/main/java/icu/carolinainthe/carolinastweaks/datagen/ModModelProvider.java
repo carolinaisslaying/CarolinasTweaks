@@ -37,7 +37,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSingleton(ModBlocks.BUNDLE_OF_STICKS, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.BUNDLE_OF_STICKS, TexturedModel.END_FOR_TOP_CUBE_COLUMN);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_COCOA);
         blockStateModelGenerator.registerDoor(ModBlocks.GOLD_PAINTED_DOOR);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK_OF_GUNPOWDER);
@@ -45,7 +45,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool condensedQuartzPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CONDENSED_QUARTZ_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_QUARTZ_BRICKS);
-        blockStateModelGenerator.registerSingleton(ModBlocks.CONDENSED_QUARTZ_PILLAR,
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.CONDENSED_QUARTZ_PILLAR,
                 TexturedModel.END_FOR_TOP_CUBE_COLUMN);
         blockStateModelGenerator.registerSingleton(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK,
                 TexturedModel.END_FOR_TOP_CUBE_COLUMN);
