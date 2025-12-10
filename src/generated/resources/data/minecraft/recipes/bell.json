@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:note_block"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "W": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "SWS",
+    "SGS",
+    "SNS"
+  ],
+  "result": {
+    "item": "minecraft:bell"
+  },
+  "show_notification": true
+}

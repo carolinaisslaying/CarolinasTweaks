@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "carolinas_tweaks:condensed_quartz_block"
+  },
+  "result": "carolinas_tweaks:condensed_quartz_stairs"
+}

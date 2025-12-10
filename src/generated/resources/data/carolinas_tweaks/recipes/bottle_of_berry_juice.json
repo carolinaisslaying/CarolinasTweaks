@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass_bottle"
+    },
+    "S": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SGS",
+    "SSS"
+  ],
+  "result": {
+    "item": "carolinas_tweaks:bottle_of_berry_juice"
+  },
+  "show_notification": true
+}
