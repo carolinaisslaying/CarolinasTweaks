@@ -5,7 +5,7 @@
 [<img alt="See me on GitHub" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/github-singular_vector.svg">](https://github.com/carolinaisslaying)
 [<img alt="Chat on Discord" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-singular_vector.svg">](https://discord.gg/VVTJhkKc4G)
 
-A collection of minor adjustments and tweaks by Carolina to improve your game. This mod only works on Fabric. Non-Fabric support is not planned and will not be added.
+A collection of minor adjustments and tweaks by Carolina to improve your game. This mod has a NeoForge version, and the Fabric version is no longer the primary focus and I can make no guarantee that it will be maintained. This decision, despite my original intention to never provide a Forge version, is due to the state of Create Fabric which this mod was intended to work alongside.
 
 ## ⚠️ WARNING: EXPERIMENTAL MIGRATION VERSION
 This is a special version of Carolina's Tweaks v1.3.0. This is only intended to be used if you are migrating your Fabric world to NeoForge.
