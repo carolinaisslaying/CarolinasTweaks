@@ -7,6 +7,17 @@
 
 A collection of minor adjustments and tweaks by Carolina to improve your game. This mod only works on Fabric. Non-Fabric support is not planned and will not be added.
 
+## ⚠️ WARNING: EXPERIMENTAL MIGRATION VERSION
+This is a special version of Carolina's Tweaks v1.3.0. This is only intended to be used if you are migrating your Fabric world to NeoForge.
+
+In that case, while your world is still running Fabric, you must update the Carolina's Tweaks mod to use this special version.
+
+Every user with Carolina's Tweaks blocks, items, etc, must log into the same while this special version of the mod is on the game. Furthermore, a user must go into all of the chunks that hold Carolina's Tweaks blocks/items/etc to update the chunk data.
+
+Once this is complete, you should be able to copy your world files to NeoForge. Ensure that you have the NeoForge version of Carolina's Tweaks installed as well.
+
+Please note, keep a backup of your world files at every stage. This is not a guaranteed fix or migration, it uses a pretty hacky fix that isn't guaranteed to work.
+
 ## Features
 This adds a collection of minor features, such as berry juice, bundle of sticks and compressed cocoa blocks. It also adds a gold painted door and trapdoor, similar to the [Supplementaries](https://github.com/MehVahdJukaar/Supplementaries) mod, but controllable by redstone in the same way as a typical wood door.
 
