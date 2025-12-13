@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:condensed_quartz_bricks_from_condensed_quartz_block_stonecutting"
+        "recipe": "carolinas_tweaks:condensed_quartz_slab_from_condensed_quartz_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:condensed_quartz_bricks_from_condensed_quartz_block_stonecutting"
+      "carolinas_tweaks:condensed_quartz_slab_from_condensed_quartz_block_stonecutting"
     ]
   },
   "sends_telemetry_event": false

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_melon_seeds": {
+    "has_condensed_quartz_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:melon_seeds"
+              "carolinas_tweaks:condensed_quartz_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:melon_seed_packet"
+        "recipe": "carolinas_tweaks:chiseled_condensed_quartz_block_from_condensed_quartz_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_melon_seeds",
+      "has_condensed_quartz_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:melon_seed_packet"
+      "carolinas_tweaks:chiseled_condensed_quartz_block_from_condensed_quartz_block_stonecutting"
     ]
   },
   "sends_telemetry_event": false

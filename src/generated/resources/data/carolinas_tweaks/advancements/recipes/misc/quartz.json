@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pumpkin_seeds": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:pumpkin_seeds"
+              "carolinas_tweaks:condensed_quartz_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pumpkin_seed_packet"
+        "recipe": "carolinas_tweaks:quartz"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_pumpkin_seeds",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pumpkin_seed_packet"
+      "carolinas_tweaks:quartz"
     ]
   },
   "sends_telemetry_event": false

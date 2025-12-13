@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block_of_leather": {
+    "has_small": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:block_of_leather"
+              "minecraft:melon_seeds"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:leather"
+        "recipe": "carolinas_tweaks:melon_seed_packet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_block_of_leather",
+      "has_small",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:leather"
+      "carolinas_tweaks:melon_seed_packet"
     ]
   },
   "sends_telemetry_event": false

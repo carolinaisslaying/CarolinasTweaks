@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_condensed_quartz_block": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:condensed_quartz_block"
+              "carolinas_tweaks:wheat_seed_packet"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:condensed_quartz_pillar_from_condensed_quartz_block_stonecutting"
+        "recipe": "carolinas_tweaks:wheat_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_condensed_quartz_block",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:condensed_quartz_pillar_from_condensed_quartz_block_stonecutting"
+      "carolinas_tweaks:wheat_seeds"
     ]
   },
   "sends_telemetry_event": false

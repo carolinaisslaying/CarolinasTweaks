@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cocoa_beans": {
+    "has_condensed_quartz_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:cocoa_beans"
+              "carolinas_tweaks:condensed_quartz_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:condensed_cocoa"
+        "recipe": "carolinas_tweaks:condensed_quartz_pillar_from_condensed_quartz_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cocoa_beans",
+      "has_condensed_quartz_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:condensed_cocoa"
+      "carolinas_tweaks:condensed_quartz_pillar_from_condensed_quartz_block_stonecutting"
     ]
   },
   "sends_telemetry_event": false

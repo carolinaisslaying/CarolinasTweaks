@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beetroot_seeds": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:beetroot_seeds"
+              "carolinas_tweaks:bundle_of_sticks"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:beetroot_seed_packet"
+        "recipe": "carolinas_tweaks:stick"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_beetroot_seeds",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:beetroot_seed_packet"
+      "carolinas_tweaks:stick"
     ]
   },
   "sends_telemetry_event": false

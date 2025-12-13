@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_condensed_quartz_block": {
+    "has_small": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:condensed_quartz_block"
+              "minecraft:gunpowder"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:condensed_quartz_stairs_from_condensed_quartz_block_stonecutting"
+        "recipe": "carolinas_tweaks:block_of_gunpowder"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_condensed_quartz_block",
+      "has_small",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:condensed_quartz_stairs_from_condensed_quartz_block_stonecutting"
+      "carolinas_tweaks:block_of_gunpowder"
     ]
   },
   "sends_telemetry_event": false

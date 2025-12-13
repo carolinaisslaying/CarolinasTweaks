@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_leather": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:leather"
+              "carolinas_tweaks:pumpkin_seed_packet"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:block_of_leather"
+        "recipe": "carolinas_tweaks:pumpkin_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_leather",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:block_of_leather"
+      "carolinas_tweaks:pumpkin_seeds"
     ]
   },
   "sends_telemetry_event": false

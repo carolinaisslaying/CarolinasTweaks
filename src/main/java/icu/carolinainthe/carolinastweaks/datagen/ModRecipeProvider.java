@@ -32,8 +32,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Consumer;
 
@@ -45,31 +47,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         // Reversible compacting recipes (9 items <-> 1 block)
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.STICK,
+
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.STICK,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.BUNDLE_OF_STICKS.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.COCOA_BEANS,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.COCOA_BEANS,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_COCOA.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.GUNPOWDER,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.GUNPOWDER,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_GUNPOWDER.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.QUARTZ,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.QUARTZ,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BLOCK.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.LEATHER,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.LEATHER,
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLOCK_OF_LEATHER.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.WHEAT_SEEDS,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.WHEAT_SEEDS,
                 RecipeCategory.MISC, ModItems.WHEAT_SEED_PACKET.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.MELON_SEEDS,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.MELON_SEEDS,
                 RecipeCategory.MISC, ModItems.MELON_SEED_PACKET.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.PUMPKIN_SEEDS,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.PUMPKIN_SEEDS,
                 RecipeCategory.MISC, ModItems.PUMPKIN_SEED_PACKET.get());
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, Items.BEETROOT_SEEDS,
+        reversibleCompacting(consumer, RecipeCategory.MISC, Items.BEETROOT_SEEDS,
                 RecipeCategory.MISC, ModItems.BEETROOT_SEED_PACKET.get());
 
         // Quartz from block
@@ -105,7 +108,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Blocks.GOLD_BLOCK)
                 .unlockedBy("has_gold_block", has(Blocks.GOLD_BLOCK))
                 .unlockedBy("has_note_block", has(Blocks.NOTE_BLOCK))
-                .save(consumer);
+                .save(consumer, resLoc(Blocks.BELL));
 
         // Stairs
         stairBuilder(ModBlocks.CONDENSED_QUARTZ_STAIRS.get(), Ingredient.of(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()))
@@ -117,11 +120,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.CONDENSED_QUARTZ_BLOCK.get());
 
         // Stonecutting recipes
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_PILLAR.get(), ModBlocks.CONDENSED_QUARTZ_BLOCK.get(), 1);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BRICKS.get(), ModBlocks.CONDENSED_QUARTZ_BLOCK.get(), 1);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK.get(), ModBlocks.CONDENSED_QUARTZ_BLOCK.get(), 1);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_STAIRS.get(), ModBlocks.CONDENSED_QUARTZ_BLOCK.get(), 1);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_SLAB.get(), ModBlocks.CONDENSED_QUARTZ_BLOCK.get(), 2);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()),
+                        RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_PILLAR.get(), 1)
+                .unlockedBy("has_condensed_quartz_block", has(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID,
+                        "condensed_quartz_pillar_from_condensed_quartz_block_stonecutting"));
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()),
+                        RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_BRICKS.get(), 1)
+                .unlockedBy("has_condensed_quartz_block", has(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID,
+                        "condensed_quartz_bricks_from_condensed_quartz_block_stonecutting"));
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()),
+                        RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK.get(), 1)
+                .unlockedBy("has_condensed_quartz_block", has(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID,
+                        "chiseled_condensed_quartz_block_from_condensed_quartz_block_stonecutting"));
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()),
+                        RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_STAIRS.get(), 1)
+                .unlockedBy("has_condensed_quartz_block", has(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID,
+                        "condensed_quartz_stairs_from_condensed_quartz_block_stonecutting"));
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()),
+                        RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONDENSED_QUARTZ_SLAB.get(), 2)
+                .unlockedBy("has_condensed_quartz_block", has(ModBlocks.CONDENSED_QUARTZ_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID,
+                        "condensed_quartz_slab_from_condensed_quartz_block_stonecutting"));
 
         // Berry juice
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.BOTTLE_OF_BERRY_JUICE.get(), 1)
@@ -142,5 +169,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Items.GOLD_NUGGET)
                 .unlockedBy("has_gold_nugget", has(Items.GOLD_NUGGET))
                 .save(consumer);
+    }
+
+    public static void reversibleCompacting(
+            Consumer<FinishedRecipe> consumer,
+            RecipeCategory smallCategory,
+            ItemLike small,
+            RecipeCategory bigCategory,
+            ItemLike big
+    ) {
+        String bigName = ForgeRegistries.ITEMS.getKey(big.asItem()).getPath();
+        String smallName = ForgeRegistries.ITEMS.getKey(small.asItem()).getPath();
+
+        ShapedRecipeBuilder.shaped(bigCategory, big)
+                .define('#', small)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_small", has(small))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID, bigName));
+
+        ShapelessRecipeBuilder.shapeless(smallCategory, small, 9)
+                .requires(big)
+                .unlockedBy("has_big", has(big))
+                .save(consumer, new ResourceLocation(CarolinasTweaks.MOD_ID, smallName));
+    }
+
+    private static ResourceLocation resLoc(ItemLike item) {
+        return new ResourceLocation(CarolinasTweaks.MOD_ID,
+                ForgeRegistries.ITEMS.getKey(item.asItem()).getPath());
     }
 }

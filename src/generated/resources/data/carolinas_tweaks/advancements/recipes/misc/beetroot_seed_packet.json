@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pumpkin_seed_packet": {
+    "has_small": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:pumpkin_seed_packet"
+              "minecraft:beetroot_seeds"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pumpkin_seeds"
+        "recipe": "carolinas_tweaks:beetroot_seed_packet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_pumpkin_seed_packet",
+      "has_small",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pumpkin_seeds"
+      "carolinas_tweaks:beetroot_seed_packet"
     ]
   },
   "sends_telemetry_event": false

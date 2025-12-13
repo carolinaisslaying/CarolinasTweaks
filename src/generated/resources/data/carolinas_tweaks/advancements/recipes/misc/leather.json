@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_condensed_quartz_block": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:condensed_quartz_block"
+              "carolinas_tweaks:block_of_leather"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chiseled_condensed_quartz_block_from_condensed_quartz_block_stonecutting"
+        "recipe": "carolinas_tweaks:leather"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_condensed_quartz_block",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chiseled_condensed_quartz_block_from_condensed_quartz_block_stonecutting"
+      "carolinas_tweaks:leather"
     ]
   },
   "sends_telemetry_event": false

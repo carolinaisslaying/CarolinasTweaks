@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_condensed_cocoa": {
+    "has_small": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:condensed_cocoa"
+              "minecraft:pumpkin_seeds"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cocoa_beans"
+        "recipe": "carolinas_tweaks:pumpkin_seed_packet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_condensed_cocoa",
+      "has_small",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cocoa_beans"
+      "carolinas_tweaks:pumpkin_seed_packet"
     ]
   },
   "sends_telemetry_event": false

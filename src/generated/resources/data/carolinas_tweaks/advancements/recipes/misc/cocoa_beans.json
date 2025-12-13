@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block_of_gunpowder": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:block_of_gunpowder"
+              "carolinas_tweaks:condensed_cocoa"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:gunpowder"
+        "recipe": "carolinas_tweaks:cocoa_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_block_of_gunpowder",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:gunpowder"
+      "carolinas_tweaks:cocoa_beans"
     ]
   },
   "sends_telemetry_event": false

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bundle_of_sticks": {
+    "has_small": {
       "conditions": {
         "items": [
           {
             "items": [
-              "carolinas_tweaks:bundle_of_sticks"
+              "minecraft:wheat_seeds"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:stick"
+        "recipe": "carolinas_tweaks:wheat_seed_packet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bundle_of_sticks",
+      "has_small",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:stick"
+      "carolinas_tweaks:wheat_seed_packet"
     ]
   },
   "sends_telemetry_event": false

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_quartz": {
+    "has_big": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:quartz"
+              "carolinas_tweaks:block_of_gunpowder"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:condensed_quartz_block"
+        "recipe": "carolinas_tweaks:gunpowder"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_quartz",
+      "has_big",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:condensed_quartz_block"
+      "carolinas_tweaks:gunpowder"
     ]
   },
   "sends_telemetry_event": false
