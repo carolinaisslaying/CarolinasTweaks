@@ -33,6 +33,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+import static icu.carolinainthe.carolinastweaks.CarolinasTweaks.MOD_ID;
+
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CarolinasTweaks.MOD_ID);
@@ -64,6 +66,9 @@ public class ModCreativeModTabs {
                             .build());
 
     public static void register(IEventBus eventBus) {
+        CarolinasTweaks.LOGGER.info("Registering creative tab for "
+                + MOD_ID + ", created by Carolina Mitchell (carolina_slaying)");
+
         CREATIVE_MODE_TABS.register(eventBus);
     }
 }

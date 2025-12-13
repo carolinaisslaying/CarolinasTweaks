@@ -44,6 +44,8 @@ import org.slf4j.Logger;
 public class CarolinasTweaks {
     public static final String MOD_ID = "carolinas_tweaks";
 
+    public static final Logger LOGGER = LogUtils.getLogger();
+
     public CarolinasTweaks() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -62,6 +64,9 @@ public class CarolinasTweaks {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        CarolinasTweaks.LOGGER.info("Adding items to creative tabs for "
+                + MOD_ID + ", created by Carolina Mitchell (carolina_slaying)");
+
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.WHEAT_SEED_PACKET);
             event.accept(ModItems.MELON_SEED_PACKET);
@@ -91,7 +96,9 @@ public class CarolinasTweaks {
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) { }
+    public void onServerStarting(ServerStartingEvent event) {
+        LOGGER.info("Loading " + MOD_ID + ", created by Carolina Mitchell (carolina_slaying)");
+    }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

@@ -41,6 +41,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static icu.carolinainthe.carolinastweaks.CarolinasTweaks.MOD_ID;
+
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, CarolinasTweaks.MOD_ID);
@@ -56,6 +58,9 @@ public class ModBlocks {
     }
 
     public static void register(IEventBus eventBus) {
+        CarolinasTweaks.LOGGER.info("Registering mod blocks for "
+                + MOD_ID + ", created by Carolina Mitchell (carolina_slaying)");
+
         BLOCKS.register(eventBus);
     }
 
