@@ -23,6 +23,8 @@
 
 package icu.carolinainthe.carolinastweaks.items.custom;
 
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -52,6 +54,16 @@ public class BerryJuiceItem extends Item {
             player.awardStat(Stats.ITEM_USED.get(this));
         }
         return resultStack;
+    }
+
+    @Override
+    public SoundEvent getDrinkingSound() {
+        return SoundEvents.HONEY_DRINK;
+    }
+
+    @Override
+    public SoundEvent getEatingSound() {
+        return SoundEvents.HONEY_DRINK;
     }
 
     @Override
