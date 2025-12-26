@@ -19,6 +19,13 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 base {
@@ -116,6 +123,9 @@ obfuscation {
 }
 
 dependencies {
+    modLocalRuntime "maven.modrinth:jei:MdKE2PdF"
+    modLocalRuntime "maven.modrinth:create:6R069CcK"
+
     // If you wish to declare dependencies against mods, make sure to use the 'mod*' configurations so that they're remapped.
 	// See https://github.com/neoforged/ModDevGradle/blob/main/LEGACY.md#remapping-mod-dependencies for more information.
 	
