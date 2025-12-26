@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_bricks"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:nether_brick",
+      "count": 2
+    },
+    {
+      "item": "create:cinder_flour",
+      "count": 1,
+      "chance": 0.25
+    }
+  ]
+}
