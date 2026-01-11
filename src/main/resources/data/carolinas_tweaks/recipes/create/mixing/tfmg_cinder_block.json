@@ -1,0 +1,40 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "tfmg:cinderblock"
+    },
+    {
+      "item": "tfmg:cinderblock"
+    },
+    {
+      "item": "tfmg:cinderblock"
+    },
+    {
+      "item": "tfmg:cinderblock"
+    },
+    {
+      "item": "tfmg:cinderblock"
+    },
+    {
+      "item": "tfmg:cinderblock"
+    },
+    {
+      "item": "tfmg:rebar"
+    },
+    {
+      "item": "tfmg:rebar"
+    },
+    {
+      "fluid": "tfmg:liquid_concrete",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "tfmg:cinder_block",
+      "count": 8
+    }
+  ]
+}

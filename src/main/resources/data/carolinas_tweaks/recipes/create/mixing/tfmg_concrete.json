@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "fluid": "tfmg:liquid_concrete",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "tfmg:concrete",
+      "count": 1
+    }
+  ]
+}
