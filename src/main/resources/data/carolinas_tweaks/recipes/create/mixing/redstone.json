@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "create:cinder_flour"
+    },
+    {
+      "fluid": "minecraft:lava",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "minecraft:redstone"
+    }
+  ]
+}

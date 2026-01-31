@@ -1,0 +1,20 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "create:weathered_copper_shingles"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 500,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      
+        "item": "create:oxidized_copper_shingles"
+      
+    }
+  ]
+}

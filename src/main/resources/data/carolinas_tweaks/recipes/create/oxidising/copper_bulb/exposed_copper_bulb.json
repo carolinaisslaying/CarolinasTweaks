@@ -1,0 +1,20 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_bulb"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 500,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      
+        "item": "minecraft:exposed_copper_bulb"
+      
+    }
+  ]
+}
