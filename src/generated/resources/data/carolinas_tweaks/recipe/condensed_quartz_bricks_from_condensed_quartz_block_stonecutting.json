@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "carolinas_tweaks:condensed_quartz_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "carolinas_tweaks:condensed_quartz_bricks"
+  }
+}

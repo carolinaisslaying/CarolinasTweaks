@@ -35,6 +35,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class BerryJuiceItem extends Item {
     public BerryJuiceItem(Properties properties) {
@@ -42,7 +43,7 @@ public class BerryJuiceItem extends Item {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity user) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity user) {
         ItemStack resultStack = super.finishUsingItem(stack, level, user);
         if (user instanceof Player player) {
             if (!player.getAbilities().instabuild) {
@@ -57,27 +58,27 @@ public class BerryJuiceItem extends Item {
     }
 
     @Override
-    public SoundEvent getDrinkingSound() {
+    public @NotNull SoundEvent getDrinkingSound() {
         return SoundEvents.HONEY_DRINK;
     }
 
     @Override
-    public SoundEvent getEatingSound() {
+    public @NotNull SoundEvent getEatingSound() {
         return SoundEvents.HONEY_DRINK;
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
+    public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.DRINK;
     }
 
     @Override
-    public int getUseDuration(ItemStack stack) {
+    public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
         return 32;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (player.canEat(false)) {
             player.startUsingItem(hand);

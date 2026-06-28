@@ -1,61 +1,45 @@
-/*
-    Carolina's Tweaks - A Minecraft Neoforge Mod (originally Fabric)
-    with a collection of minor adjustments and tweaks to improve your game.
-
-    Copyright (C) 2025 Carolina Mitchell
-
-    This licence notice only applies to non-asset components relating to this software. For the assets licence,
-    see the ASSETS_LICENCE.md file.
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published
-    by the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 package icu.carolinainthe.carolinastweaks;
 
-import com.mojang.logging.LogUtils;
 import icu.carolinainthe.carolinastweaks.blocks.ModBlocks;
-import icu.carolinainthe.carolinastweaks.items.ModCreativeModTabs;
+import icu.carolinainthe.carolinastweaks.items.ModCreativeModeTabs;
 import icu.carolinainthe.carolinastweaks.items.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import com.mojang.logging.LogUtils;
+
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
+
+// The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(CarolinasTweaks.MOD_ID)
 public class CarolinasTweaks {
     public static final String MOD_ID = "carolinas_tweaks";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public CarolinasTweaks() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    // The constructor for the mod class is the first code that is run when your mod is loaded.
+    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
+    public CarolinasTweaks(IEventBus modEventBus, ModContainer modContainer) {
+        // Register the commonSetup method for modloading
+        modEventBus.addListener(this::commonSetup);
 
-        ModCreativeModTabs.register(modEventBus);
+        // Register ourselves for server and other game events we are interested in.
+        // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
+        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
+        NeoForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
-
-        MinecraftForge.EVENT_BUS.register(this);
+        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
     }
 
@@ -63,6 +47,7 @@ public class CarolinasTweaks {
 
     }
 
+    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         CarolinasTweaks.LOGGER.info("Adding items to creative tabs for "
                 + MOD_ID + ", created by Carolina Mitchell (carolina_slaying)");
@@ -86,8 +71,6 @@ public class CarolinasTweaks {
             event.accept(ModBlocks.CHISELED_CONDENSED_QUARTZ_BLOCK);
             event.accept(ModBlocks.CONDENSED_QUARTZ_STAIRS);
             event.accept(ModBlocks.CONDENSED_QUARTZ_SLAB);
-            event.accept(ModBlocks.GOLD_PAINTED_DOOR);
-            event.accept(ModBlocks.GOLD_PAINTED_DOOR);
         }
 
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -95,14 +78,9 @@ public class CarolinasTweaks {
         }
     }
 
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("Loading " + MOD_ID + ", created by Carolina Mitchell (carolina_slaying)");
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) { }
     }
 }

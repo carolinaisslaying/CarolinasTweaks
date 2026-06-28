@@ -24,37 +24,34 @@
 package icu.carolinainthe.carolinastweaks.blocks;
 
 import icu.carolinainthe.carolinastweaks.CarolinasTweaks;
+import icu.carolinainthe.carolinastweaks.blocks.custom.FlammableFallingBlock;
 import icu.carolinainthe.carolinastweaks.items.ModItems;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import icu.carolinainthe.carolinastweaks.blocks.custom.FlammablePillarBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
 import static icu.carolinainthe.carolinastweaks.CarolinasTweaks.MOD_ID;
 
 public class ModBlocks {
-    public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, CarolinasTweaks.MOD_ID);
+    public static final DeferredRegister.Blocks BLOCKS =
+            DeferredRegister.createBlocks(MOD_ID);
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
@@ -64,78 +61,46 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 
-    public static final RegistryObject<Block> BUNDLE_OF_STICKS = registerBlock("bundle_of_sticks",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_BLOCK)
-                    .strength(0.5f, 0.2f)) {
+    public static final DeferredBlock<Block> BUNDLE_OF_STICKS = registerBlock("bundle_of_sticks",
+            () -> new FlammablePillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_BLOCK)
+                    .strength(0.5f, 0.2f)));
 
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 10;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-            });
-
-    public static final RegistryObject<Block> CONDENSED_COCOA = registerBlock("condensed_cocoa",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COCOA)
+    public static final DeferredBlock<Block> CONDENSED_COCOA = registerBlock("condensed_cocoa",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COCOA)
                     .strength(0.8f, 3.0f)));
 
-    public static final RegistryObject<Block> GOLD_PAINTED_DOOR = registerBlock("gold_painted_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
+    public static final DeferredBlock<Block> GOLD_PAINTED_DOOR = registerBlock("gold_painted_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
 
-    public static final RegistryObject<Block> BLOCK_OF_GUNPOWDER = registerBlock("block_of_gunpowder",
-            () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)) {
+    public static final DeferredBlock<Block> BLOCK_OF_GUNPOWDER = registerBlock("block_of_gunpowder",
+            () -> new FlammableFallingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND)));
 
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 100;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 150;
-                }
-            });
-
-    public static final RegistryObject<Block> CONDENSED_QUARTZ_BLOCK = registerBlock("condensed_quartz_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)
+    public static final DeferredBlock<Block> CONDENSED_QUARTZ_BLOCK = registerBlock("condensed_quartz_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)
                     .strength(1.2f)));
 
-    public static final RegistryObject<Block> CONDENSED_QUARTZ_PILLAR = registerBlock("condensed_quartz_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_PILLAR)
+    public static final DeferredBlock<Block> CONDENSED_QUARTZ_PILLAR = registerBlock("condensed_quartz_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR)
                     .strength(1.2f)));
 
-    public static final RegistryObject<Block> CONDENSED_QUARTZ_BRICKS = registerBlock("condensed_quartz_bricks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BRICKS)
+    public static final DeferredBlock<Block> CONDENSED_QUARTZ_BRICKS = registerBlock("condensed_quartz_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BRICKS)
                     .strength(1.2f)));
 
-    public static final RegistryObject<Block> CHISELED_CONDENSED_QUARTZ_BLOCK = registerBlock("chiseled_condensed_quartz_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_QUARTZ_BLOCK)
+    public static final DeferredBlock<Block> CHISELED_CONDENSED_QUARTZ_BLOCK = registerBlock("chiseled_condensed_quartz_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_QUARTZ_BLOCK)
                     .strength(1.2f)));
 
-    public static final RegistryObject<Block> CONDENSED_QUARTZ_STAIRS = registerBlock("condensed_quartz_stairs",
-            () -> new StairBlock(() -> CONDENSED_QUARTZ_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.copy(Blocks.QUARTZ_STAIRS)
+    public static final DeferredBlock<Block> CONDENSED_QUARTZ_STAIRS = registerBlock("condensed_quartz_stairs",
+            () -> new StairBlock(CONDENSED_QUARTZ_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_STAIRS)
                             .strength(1.2f)));
 
-    public static final RegistryObject<Block> CONDENSED_QUARTZ_SLAB = registerBlock("condensed_quartz_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_SLAB)
+    public static final DeferredBlock<Block> CONDENSED_QUARTZ_SLAB = registerBlock("condensed_quartz_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_SLAB)
                     .strength(1.2f)));
 
-    public static final RegistryObject<Block> BLOCK_OF_LEATHER = registerBlock("block_of_leather",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPLE_WOOL)
+    public static final DeferredBlock<Block> BLOCK_OF_LEATHER = registerBlock("block_of_leather",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_WOOL)
                     .strength(1.5f, 1.0f)));
 }
