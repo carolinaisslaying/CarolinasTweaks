@@ -34,5 +34,5 @@ This mod was created by Carolina Mitchell.
 The gold painted door and trapdoor textures are works of [Plantkillable](https://github.com/Plantkillable) from the Supplementaries Team, and are the copyright of the Supplementaries Team. Supplementaries is a really cool mod, [check them out on Modrinth](https://modrinth.com/mod/supplementaries)!
 
 Please _see_ the following for the licence:
-* [ASSETS_LICENCE.md](https://github.com/carolinaisslaying/CarolinasTweaks/blob/main/ASSETS_LICENCE.md) for non-programmatical components of the software.
-* [LICENCE.md](https://github.com/carolinaisslaying/CarolinasTweaks/blob/main/LICENCE.md) for all other parts of the software.
+* [ASSETS_LICENCE.md](https://github.com/carolinaisslaying/CarolinasTweaks/blob/1.21.1-neoforge/ASSETS_LICENCE.md) for non-programmatical components of the software.
+* [LICENCE.md](https://github.com/carolinaisslaying/CarolinasTweaks/blob/1.21.1-neoforge/LICENCE.md) for all other parts of the software.
