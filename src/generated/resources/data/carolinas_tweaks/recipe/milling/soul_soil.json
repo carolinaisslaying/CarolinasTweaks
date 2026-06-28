@@ -1,0 +1,18 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:soul_soil"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "id": "minecraft:soul_sand"
+    },
+    {
+      "chance": 0.25,
+      "id": "minecraft:gunpowder"
+    }
+  ]
+}

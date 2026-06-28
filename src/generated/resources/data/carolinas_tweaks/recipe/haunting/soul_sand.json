@@ -1,0 +1,19 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "minecraft:soul_sand"
+    }
+  ],
+  "results": [
+    {
+      "chance": 0.125,
+      "count": 3,
+      "id": "minecraft:quartz"
+    },
+    {
+      "chance": 0.125,
+      "id": "minecraft:gold_nugget"
+    }
+  ]
+}
